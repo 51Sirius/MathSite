@@ -1,4 +1,14 @@
 header {
+    display: flex;
     background: #ff6464;
     width: 100%;
+}
+
+.logo {
+    color: black;
+    text-decoration: none;
+    display: block;
+    font-family: Tahoma, 'sans-serif';
+    padding: 3vh;
+    font-size: xxx-large;
 }
