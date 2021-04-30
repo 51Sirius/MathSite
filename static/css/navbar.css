@@ -1,11 +1,12 @@
 header {
+    flex-grow: 0;
     display: flex;
-    background: #ff6464;
+    background: #242582;
     width: 100%;
 }
 
 .logo {
-    color: black;
+    color: #F64C72;
     text-decoration: none;
     display: block;
     font-family: Tahoma, 'sans-serif';

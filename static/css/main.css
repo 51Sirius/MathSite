@@ -2,5 +2,31 @@ body {
     margin:0;
 }
 main {
-    background: #fff5be;
+    background: #2F2FA2;
+    flex-grow: 4;
+}
+
+.page {
+    flex-direction: column;
+    display: flex;
+    height: 100vh;
+}
+
+.button-block{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+
+.button-play {
+    background: #F64C72;
+    text-decoration: none;
+    display: block;
+    padding: 10vh 10vw 10vh 10vw;
+    border: #F64C72 3px solid;
+    font-size: xx-large;
+    border-radius: 12vh;
+    color: white;
 }
