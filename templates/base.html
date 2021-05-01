@@ -3,6 +3,8 @@
 <head>
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/navbar.css') }}"/>
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/main.css') }}"/>
+    {% block custom %}
+    {% endblock %}
     <meta charset="UTF-8">
     <title> {{ title }} </title>
 </head>
@@ -17,5 +19,7 @@
     </main>
 </div>
 <script src="{{ url_for('static', filename='scripts/buttons.js') }}"></script>
+{% block scripts %}
+{% endblock %}
 </body>
 </html>
