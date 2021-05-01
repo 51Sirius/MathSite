@@ -1,0 +1,14 @@
+.stat-bar {
+    color: aliceblue;
+    display: flex;
+}
+
+.game {
+    display: flex;
+    flex-direction: column;
+}
+
+.quest {
+    font-size: 10vh;
+    color: aliceblue;
+}

@@ -1,4 +1,17 @@
 {% extends 'base.html' %}
+{% block custom %}
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/game.css') }}"/>
+{% endblock %}
+{% block content %}
+    <div class="stat-bar">
+        score = 1000
+    </div>
+    <div class="game">
+        <div class="quest">
+            1 + 10 = ?
+        </div>
+    </div>
+{% endblock %}
 {% block scripts %}
     <script src="{{ url_for('static', filename='scripts/game.js') }}"></script>
 {% endblock %}
