@@ -8,13 +8,14 @@
 </head>
 <body>
 <div class="page">
-<header>
-    {% include 'navbar.html' %}
-</header>
-<main>
-    {% block content %}
-    {% endblock %}
-</main>
+    <header>
+        {% include 'navbar.html' %}
+    </header>
+    <main>
+        {% block content %}
+        {% endblock %}
+    </main>
 </div>
+<script src="{{ url_for('static', filename='scripts/buttons.js') }}"></script>
 </body>
 </html>

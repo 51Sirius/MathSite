@@ -1,6 +1,7 @@
 body {
-    margin:0;
+    margin: 0;
 }
+
 main {
     background: #2F2FA2;
     flex-grow: 4;
@@ -12,7 +13,7 @@ main {
     height: 100vh;
 }
 
-.button-block{
+.button-block {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -21,12 +22,15 @@ main {
 }
 
 .button-play {
-    background: #F64C72;
+    padding: 10vh 10vw 10vh 10vw;
+    font-size: xx-large;
+}
+
+.button {
+    transition: transform .3s;
     text-decoration: none;
     display: block;
-    padding: 10vh 10vw 10vh 10vw;
-    border: #F64C72 3px solid;
-    font-size: xx-large;
+    border: #F64C72 6px solid;
     border-radius: 12vh;
     color: white;
 }

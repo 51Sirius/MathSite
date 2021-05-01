@@ -8,5 +8,10 @@ def main_page():
     return render_template('index.html', title='MathTR')
 
 
+@app.route('/play')
+def play_menu():
+    return render_template('')
+
+
 if __name__ == '__main__':
     app.run()
