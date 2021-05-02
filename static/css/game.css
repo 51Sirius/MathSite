@@ -1,9 +1,14 @@
 .stat-bar {
+    font-size: xx-large;
+    width: 100%;
+    justify-content: space-between;
+    margin: 0 0 0 auto;
     color: aliceblue;
     display: flex;
 }
 
 .game {
+    margin: auto;
     display: flex;
     flex-direction: column;
 }
@@ -11,4 +16,17 @@
 .quest {
     font-size: 10vh;
     color: aliceblue;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+}
+
+.level {
+    margin-left: 10px;
+}
+
+.point {
+    margin-right:  10px;
 }
