@@ -10,11 +10,18 @@ function generateExample(event) {
   const difficulty = level[9]
     if ('5' === clas) {
       if ('1' === difficulty) {
-        let number_one = getRandomInt(10)
-        let number_two = getRandomInt(10)
-        quest.innerHTML = String(number_one) + ' + ' + String(number_two) + ' = ?';
+        let number_one = getRandomInt(10);
+        let number_two = getRandomInt(10);
+        let r = getRandomInt(3);
+        if (r === 1) {
+          quest.innerHTML = String(number_one) + ' + ' + String(number_two) + ' = ?';
+          const answer = number_one + number_two;
+        }
+        else if (r === 2) {
+          quest.innerHTML = String(number_one) + ' - ' + String(number_two) + ' = ?';
+          const answer = number_one - number_two;
+        }
       }
-
   }
 }
 
