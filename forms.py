@@ -18,6 +18,6 @@ class Registration(FlaskForm):
 
 class LoginForm(FlaskForm):
     username = StringField('Никнэйм', validators=[DataRequired()], widget=TextInput())
-    password = PasswordField('Пароль', validators=[DataRequired()], widget=TextInput())
+    password = PasswordField('Пароль', validators=[DataRequired()], widget=PasswordInput())
     remember_me = BooleanField('Запомнить меня')
     submit = SubmitField('Войти')
