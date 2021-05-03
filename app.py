@@ -7,6 +7,7 @@ import locale
 from os import environ
 
 app = Flask(__name__)
+app.config['SECRET_KEY'] = 'you-will-never-guess'
 
 
 @app.route('/')
