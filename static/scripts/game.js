@@ -1,5 +1,5 @@
 function getRandomInt(max) {
-  return Math.floor(Math.random() * max);
+  return Math.floor(Math.random() * max) + 1;
 }
 
 const quest = document.querySelector('.quest');
@@ -12,7 +12,7 @@ function generateExample(event) {
       if ('1' === difficulty) {
         let number_one = getRandomInt(10);
         let number_two = getRandomInt(10);
-        let r = getRandomInt(3);
+        let r = getRandomInt(2);
         if (r === 1) {
           quest.innerHTML = String(number_one) + ' + ' + String(number_two) + ' = ?';
           const answer = number_one + number_two;
