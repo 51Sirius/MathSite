@@ -1,7 +1,9 @@
 <a class="logo" href="{{ url_for('main_page') }}">MathTR</a>
-    {% if current_user.is_anonymous %}
-    <a href="{{ url_for('login') }}">Login</a>
-    <a href="{{ url_for('registration') }}">Registration</a>
-    {% else %}
-    <a href="{{ url_for('logout') }}">Logout</a>
-    {% endif %}
+{% if current_user.is_anonymous %}
+    <div class="button-group">
+        <a href="{{ url_for('login') }}" class="button small">Login</a>
+        <a href="{{ url_for('registration') }}" class="button small">Registration</a>
+    </div>
+{% else %}
+    <a href="{{ url_for('logout') }}">{{ current_user.username }}</a>
+{% endif %}

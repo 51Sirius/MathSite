@@ -22,6 +22,7 @@ main {
 }
 
 .button-play {
+    margin: 0;
     padding: 10vh 10vw 10vh 10vw;
     font-size: xx-large;
 }

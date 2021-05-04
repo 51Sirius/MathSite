@@ -1,4 +1,5 @@
 header {
+    justify-content: space-between;
     flex-grow: 0;
     display: flex;
     background: #242582;
@@ -12,4 +13,19 @@ header {
     font-family: Tahoma, 'sans-serif';
     padding: 3vh;
     font-size: xxx-large;
+}
+
+.button-group{
+    width: auto;
+    align-items: center;
+    justify-content: center;
+    transition: transform .3s;
+    text-decoration: none;
+    display: flex;
+    color: white;
+}
+
+.button {
+    margin-right: 10px;
+    padding: 1vh 4vw 1vh 4vw;
 }

@@ -55,7 +55,6 @@ def login():
 @app.route('/registration', methods=['GET', 'POST'])
 def registration():
     register_form = Registration()
-    print(1)
     if register_form.validate_on_submit():
         email = register_form.email.data
         name = register_form.username.data
