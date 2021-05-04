@@ -9,8 +9,8 @@ class Answer(FlaskForm):
 
 
 class Registration(FlaskForm):
-    nickname = StringField('Никнэйм', validators=[DataRequired()], widget=TextInput())
-    mail = StringField('Почта', validators=[DataRequired()], widget=TextInput())
+    username = StringField('Никнэйм', validators=[DataRequired()], widget=TextInput())
+    email = StringField('Почта', validators=[DataRequired()], widget=TextInput())
     password = StringField('Пароль', validators=[DataRequired()], widget=PasswordInput())
     password_confirm = StringField('Подтверждение пароля', validators=[DataRequired(), EqualTo('password')],
                                    widget=PasswordInput())

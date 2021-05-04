@@ -5,7 +5,7 @@ from flask_login import LoginManager, login_user, logout_user, current_user, log
 import datetime
 import locale
 from os import environ
-from forms import LoginForm
+from forms import LoginForm, Registration, Answer
 from flask_sqlalchemy import SQLAlchemy
 from flask_migrate import Migrate
 from models import Users, db
@@ -66,8 +66,8 @@ def registration():
         user.set_password(password)
         db.session.add(user)
         db.session.commit()
-        return redirect(url_for('homepage'))
-    return render_template('registration.html', form=register_form)
+        return redirect(url_for('main_page'))
+    return render_template('registration.html', form=register_form, title='Registration')
 
 
 @app.route('/logout')
