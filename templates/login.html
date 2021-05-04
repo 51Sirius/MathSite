@@ -1,18 +1,19 @@
 {% extends "base.html" %}
+{% block custom %}
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/auth.css') }}"/>
+{% endblock %}
 
 {% block content %}
-    <h1>Sign In</h1>
+    <div class="page-registration">
+    <h1>Вход</h1>
     <form action="{{ url_for('login') }}" method="post" novalidate>
         {{ form.csrf_token  }}
-        <p>
-            {{ form.username.label }}
-            {{ form.username }}
-        </p>
-        <p>
-            {{ form.password.label }}
-            {{ form.password }}
-        </p>
+            <p>{{ form.username.label }}</p>
+            <p>{{ form.username }}</p>
+            <p>{{ form.password.label }}</p>
+            <p>{{ form.password }}</p>
         <p>{{ form.remember_me }} {{ form.remember_me.label }}</p>
         <button type="submit" class="button-reg">Войти</button>
     </form>
+    </div>
 {% endblock %}

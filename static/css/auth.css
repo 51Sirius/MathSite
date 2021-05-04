@@ -1,0 +1,17 @@
+.page-registration {
+    color: #F64C72;
+    background: #242582;
+    padding: 10vw 10vh 10vw 10vh;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    width: 50vw;
+    border-radius: 80px;
+}
+
+main {
+    display: flex;
+    flex-direction: initial;
+    align-items: center;
+    justify-content: center;
+}
