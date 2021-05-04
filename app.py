@@ -36,15 +36,15 @@ def play_menu():
     return render_template('play.html', title='Game')
 
 
-@app.route('/login')
+@app.route('/login', methods=['GET', 'POST'])
 def login():
     if current_user.is_authenticated:
         return redirect(url_for('index'))
     forms = LoginForm()
     if forms.validate_on_submit():
-        nick = forms.mail_or_name.data
+        nick = forms.username.data
         password = forms.password.data
-        user = Users.query.filter_by(mail=nick).first()
+        user = Users.query.filter_by(username=nick).first()
         if not (user and user.check_password(password)):
             abort(403)
         login_user(user, remember=forms.remember_me)
@@ -73,7 +73,7 @@ def registration():
 @app.route('/logout')
 def logout():
     logout_user()
-    return redirect(url_for('index'))
+    return redirect(url_for('main_page'))
 
 
 if __name__ == '__main__':
