@@ -9,13 +9,21 @@ from forms import LoginForm
 from flask_sqlalchemy import SQLAlchemy
 from flask_migrate import Migrate
 from models import Users, db
+from flask_login import LoginManager, login_user, logout_user, current_user, login_required
 
 app = Flask(__name__)
+locale.setlocale(locale.LC_ALL, '')
 app.config['SECRET_KEY'] = 'you-will-never-guess'
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///db.sqlite'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db.init_app(app)
 migrate = Migrate(app, db)
+login = LoginManager(app)
+
+
+@login.user_loader
+def load_user(user_id):
+    return Users.query.get(int(user_id))
 
 
 @app.route('/')
@@ -30,6 +38,8 @@ def play_menu():
 
 @app.route('/login')
 def login():
+    if current_user.is_authenticated:
+        return redirect(url_for('index'))
     forms = LoginForm()
     if forms.validate_on_submit():
         nick = forms.mail_or_name.data
@@ -40,6 +50,12 @@ def login():
         login_user(user, remember=forms.remember_me)
         return redirect(url_for('main_page'))
     return render_template('login.html', title='Login', form=forms)
+
+
+@app.route('/logout')
+def logout():
+    logout_user()
+    return redirect(url_for('index'))
 
 
 if __name__ == '__main__':
