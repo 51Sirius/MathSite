@@ -15,3 +15,12 @@ main {
     align-items: center;
     justify-content: center;
 }
+
+button {
+    background: none;
+}
+
+p {
+    text-align: center;
+    margin-top: 10px;
+}
