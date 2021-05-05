@@ -10,6 +10,7 @@ from flask_sqlalchemy import SQLAlchemy
 from flask_migrate import Migrate
 from models import Users, db
 from flask_login import LoginManager, login_user, logout_user, current_user, login_required
+import generate_quest as gen
 
 app = Flask(__name__)
 locale.setlocale(locale.LC_ALL, '')
@@ -33,7 +34,10 @@ def main_page():
 
 @app.route('/play')
 def play_menu():
-    return render_template('play.html', title='Game')
+    forms = Answer()
+    if forms.validate_on_submit():
+        answer = forms.answer.data
+    return render_template('play.html', title='Game', form=forms)
 
 
 @app.route('/login', methods=['GET', 'POST'])

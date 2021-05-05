@@ -8,12 +8,14 @@
 }
 
 .game {
+    min-font-size: 10vh;
     margin: auto;
     display: flex;
     flex-direction: column;
 }
 
 .quest {
+    text-align: center;
     font-size: 10vh;
     color: aliceblue;
 }
@@ -29,4 +31,29 @@ main {
 
 .point {
     margin-right:  10px;
+}
+
+.button {
+    margin: 20px 0 0 0;
+    width: 100%;
+    background: none;
+}
+
+.answer {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.answer-form {
+    font-family: Cambria, sans-serif;
+    color: white;
+    font-size: 4vh;
+    border: #F64C72 6px solid;
+    background: none;
+    width: 100%;
+}
+
+.block-answer {
+    width: auto;
 }
