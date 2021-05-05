@@ -4,9 +4,9 @@
 {% endblock %}
 {% block content %}
     <div class="stat-bar">
-        <div class="level">LEVEL: 5-1</div>
+        <div class="level">LEVEL: {{ current_user.class_user }}-{{ current_user.level }}</div>
         <div class="point">
-            SCORE: 100
+            Score: {{ current_user.score }}
         </div>
     </div>
     <div class="game">

@@ -5,5 +5,5 @@
         <a href="{{ url_for('registration') }}" class="button small">Registration</a>
     </div>
 {% else %}
-    <a href="{{ url_for('logout') }}">{{ current_user.username }}</a>
+    <a href="{{ url_for('logout') }}" class="nickname">{{ current_user.username }}</a>
 {% endif %}
