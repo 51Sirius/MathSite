@@ -35,9 +35,11 @@ def main_page():
 @app.route('/play')
 def play_menu():
     forms = Answer()
+    example = gen.Example(vibor=[current_user.class_user, current_user.level])
+    example.gen_ex()
     if forms.validate_on_submit():
         answer = forms.answer.data
-    return render_template('play.html', title='Game', form=forms)
+    return render_template('play.html', title='Game', form=forms, example=example.str_example)
 
 
 @app.route('/login', methods=['GET', 'POST'])
