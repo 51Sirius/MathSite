@@ -1,0 +1,26 @@
+.page-registration {
+    justify-content: space-between;
+    align-items: center;
+    color: #F64C72;
+    background: #242582;
+    min-height: 50vh;
+    display: flex;
+    flex-direction: column;
+    width: 50vw;
+    border-radius: 80px;
+}
+
+main {
+    display: flex;
+    flex-direction: initial;
+    align-items: center;
+    justify-content: center;
+}
+
+.header-page {
+
+}
+
+.footer-page {
+    display: flex;
+}

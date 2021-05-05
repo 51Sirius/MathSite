@@ -86,6 +86,12 @@ def registration():
     return render_template('registration.html', form=register_form, title='Registration')
 
 
+@app.route('/user/<string:nick>')
+def user(nick):
+    user = Users.query.filter_by(username=nick).first()
+    return render_template('user.html', title=nick, user=user)
+
+
 @app.route('/logout')
 def logout():
     logout_user()

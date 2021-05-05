@@ -10,7 +10,7 @@ class Answer(FlaskForm):
 
 class Registration(FlaskForm):
     username = StringField('Никнэйм', validators=[DataRequired()], widget=TextInput())
-    email = StringField('Почта', validators=[DataRequired()], widget=TextInput())
+    email = StringField('Почта', validators=[DataRequired(), Email()], widget=TextInput())
     password = StringField('Пароль', validators=[DataRequired()], widget=PasswordInput())
     password_confirm = StringField('Подтверждение пароля', validators=[DataRequired(), EqualTo('password')],
                                    widget=PasswordInput())
