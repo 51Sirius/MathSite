@@ -14,6 +14,7 @@ class Users(db.Model, UserMixin):
     score = db.Column(db.Integer, default=0)
     class_user = db.Column(db.Integer, default=5)
     level = db.Column(db.Integer, default=1)
+    last_answer = db.Column(db.String, default=None)
 
     def set_password(self, password):
         self.password = generate_password_hash(password)

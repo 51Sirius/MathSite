@@ -32,13 +32,23 @@ def main_page():
     return render_template('index.html', title='MathTR')
 
 
-@app.route('/play')
+@app.route('/play', methods=['GET', 'POST'])
 def play_menu():
     forms = Answer()
     example = gen.Example(vibor=[current_user.class_user, current_user.level])
-    example.gen_ex()
     if forms.validate_on_submit():
         answer = forms.answer.data
+        print(answer, current_user.last_answer)
+        if answer == current_user.last_answer:
+            current_user.score += 1
+            db.session.commit()
+            return redirect(url_for('play_menu'))
+        else:
+            return render_template('index.html')
+    else:
+        example.gen_ex()
+        current_user.last_answer = example.result
+        db.session.commit()
     return render_template('play.html', title='Game', form=forms, example=example.str_example)
 
 
