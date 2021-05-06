@@ -26,4 +26,5 @@ class LoginForm(FlaskForm):
 class Settings(FlaskForm):
     username = StringField('Никнэйм', validators=[DataRequired()], widget=TextInput())
     clas = IntegerField('Класс', validators=[DataRequired(), NumberRange(min=5, max=6)], widget=TextInput('number'))
+    level = IntegerField('Сложность', validators=[DataRequired(), NumberRange(min=1, max=3)], widget=TextInput('number'))
     submit = SubmitField('Изменить')
