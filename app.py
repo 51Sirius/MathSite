@@ -40,7 +40,7 @@ def play_menu():
         answer = forms.answer.data
         print(answer, current_user.last_answer)
         if answer == current_user.last_answer:
-            current_user.score += 1
+            current_user.user.score += 1
             db.session.commit()
             return redirect(url_for('play_menu'))
         else:
@@ -89,7 +89,37 @@ def registration():
 @app.route('/user/<string:nick>')
 def user(nick):
     user = Users.query.filter_by(username=nick).first()
-    return render_template('user.html', title=nick, user=user)
+    if 0 <= user.score < 500:
+        rank = 'iron.png'
+        rank_name = 'железо'
+    elif 500 <= user.score < 1000:
+        rank = 'iron.png'
+        rank_name = 'бронза'
+    elif 1000 <= user.score < 2000:
+        rank = 'iron.png'
+        rank_name = 'серебро'
+    elif 2000 <= user.score < 3000:
+        rank = 'iron.png'
+        rank_name = 'золото'
+    elif 3000 <= user.score < 5000:
+        rank = 'iron.png'
+        rank_name = 'платина'
+    elif 5000 <= user.score < 10000:
+        rank = 'iron.png'
+        rank_name = 'алмаз'
+    elif 10000 <= user.score < 20000:
+        rank = 'iron.png'
+        rank_name = 'мастер'
+    elif 20000 <= user.score < 100000:
+        rank = 'iron.png'
+        rank_name = 'гранд-мастер'
+    elif user.score >= 100000:
+        rank = 'iron.png'
+        rank_name = 'Легенда'
+    else:
+        rank = ''
+        rank_name = ''
+    return render_template('user.html', title=nick, user=user, rank=rank, rank_name=rank_name)
 
 
 @app.route('/logout')

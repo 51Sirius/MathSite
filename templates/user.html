@@ -4,7 +4,20 @@
 {% endblock %}
 {% block content %}
     <div class="page-registration">
-        <div class="header-page"><div class="nickname">{{ user.username }}</div></div>
+        <div class="header-page">
+            <div class="rank_img">
+                <img src="{{ url_for('static', filename='images/'+rank) }}" alt="ваш ранг">
+            </div>
+            <div class="nickname">{{ user.username }}</div>
+        </div>
+        <div class="main-page">
+            <h1>Статистика</h1>
+            <ul>
+                <li>Ваш ранг: {{ rank_name }}</li>
+                <li>Количество очков: {{ user.score }}</li>
+            </ul>
+
+        </div>
         <div class="footer-page"><a href="{{ url_for('logout') }}" class="button">Выйти</a></div>
     </div>
 {% endblock %}

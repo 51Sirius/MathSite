@@ -18,9 +18,34 @@ main {
 }
 
 .header-page {
+    margin: 10px 0 0 60px;
+    width: 100%;
+    display: flex;
+    align-items: center;
 
 }
 
 .footer-page {
     display: flex;
+}
+
+.header-page {
+
+}
+
+.rank_img > img {
+    max-height: 15vh;
+}
+
+.main-page {
+    margin-left: 10px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-items: flex-start;
+    align-items: flex-start;
+}
+
+.main-page ul > li {
+    font-size: x-large;
 }
