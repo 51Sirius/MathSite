@@ -1,7 +1,7 @@
 from flask_wtf import FlaskForm
 from wtforms import StringField, IntegerField, BooleanField, PasswordField, SubmitField
-from wtforms.validators import DataRequired, Email, EqualTo
-from wtforms.widgets import TextArea, TextInput, PasswordInput
+from wtforms.validators import DataRequired, Email, EqualTo, NumberRange
+from wtforms.widgets import TextArea, TextInput, PasswordInput, ListWidget
 
 
 class Answer(FlaskForm):
@@ -21,3 +21,9 @@ class LoginForm(FlaskForm):
     password = PasswordField('Пароль', validators=[DataRequired()], widget=PasswordInput())
     remember_me = BooleanField('Запомнить меня')
     submit = SubmitField('Войти')
+
+
+class Settings(FlaskForm):
+    username = StringField('Никнэйм', validators=[DataRequired()], widget=TextInput())
+    clas = IntegerField('Класс', validators=[DataRequired(), NumberRange(min=5, max=6)], widget=TextInput('number'))
+    submit = SubmitField('Изменить')

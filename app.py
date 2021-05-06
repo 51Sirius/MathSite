@@ -1,11 +1,11 @@
-from flask import Flask, render_template, request, redirect, url_for, abort
+from flask import Flask, render_template, request, redirect, url_for, abort, flash
 from flask_migrate import Migrate
 from flask_wtf import form
 from flask_login import LoginManager, login_user, logout_user, current_user, login_required
 import datetime
 import locale
 from os import environ
-from forms import LoginForm, Registration, Answer
+from forms import LoginForm, Registration, Answer, Settings
 from flask_sqlalchemy import SQLAlchemy
 from flask_migrate import Migrate
 from models import Users, db
@@ -38,7 +38,6 @@ def play_menu():
     example = gen.Example(vibor=[current_user.class_user, current_user.level])
     if forms.validate_on_submit():
         answer = forms.answer.data
-        print(answer, current_user.last_answer)
         if answer == current_user.last_answer:
             current_user.user.score += 1
             db.session.commit()
@@ -122,9 +121,21 @@ def user(nick):
     return render_template('user.html', title=nick, user=user, rank=rank, rank_name=rank_name)
 
 
-@app.route('/settings')
+@app.route('/settings', methods=['GET', 'POST'])
 def settings():
-    return render_template('settings.html', title='Настройки')
+    forms = Settings()
+    if forms.validate_on_submit():
+        nick = forms.username.data
+        existing_user = Users.query.filter_by(username=nick).first()
+        if existing_user:
+            flash('Человекс с таким именем уже есть')
+        else:
+            class_user = forms.clas.data
+            current_user.username = nick
+            current_user.class_user = class_user
+            db.session.commit()
+            return redirect(url_for('main_page'))
+    return render_template('settings.html', title='Настройки', form=forms)
 
 
 @app.route('/logout')
