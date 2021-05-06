@@ -18,6 +18,11 @@
             </ul>
 
         </div>
-        <div class="footer-page"><a href="{{ url_for('logout') }}" class="button">Выйти</a></div>
+        <div class="footer-page">
+            {% if current_user.id == user.id %}
+            <a href="{{ url_for('logout') }}" class="button">Выйти</a>
+            <a href="{{ url_for('settings') }}" class="button">Настройки</a>
+            {% endif %}
+        </div>
     </div>
 {% endblock %}

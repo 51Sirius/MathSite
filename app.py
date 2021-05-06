@@ -122,6 +122,11 @@ def user(nick):
     return render_template('user.html', title=nick, user=user, rank=rank, rank_name=rank_name)
 
 
+@app.route('/settings')
+def settings():
+    return render_template('settings.html', title='Настройки')
+
+
 @app.route('/logout')
 def logout():
     logout_user()
