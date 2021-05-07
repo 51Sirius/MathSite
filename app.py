@@ -43,7 +43,8 @@ def play_menu():
             db.session.commit()
             return redirect(url_for('play_menu'))
         else:
-            return render_template('index.html')
+            flash('Это был неправильный ответ.')
+            return redirect(url_for('play_menu'))
     else:
         example.gen_ex()
         current_user.last_answer = example.result
@@ -130,11 +131,21 @@ def settings():
         if existing_user:
             flash('Человекс с таким именем уже есть')
         else:
-            class_user = forms.clas.data
             current_user.username = nick
-            current_user.class_user = class_user
+        level = forms.level.data
+        class_user = forms.clas.data
+        if class_user != '':
+            if 5 <= class_user <= 6:
+                current_user.class_user = class_user
+            else:
+                flash('Доступны только 5е и 6е классы')
+        if level != '':
+            if 1 <= level <= 3:
+                current_user.level = level
+            else:
+                flash('Доступны только 1-3 уровни')
             db.session.commit()
-            return redirect(url_for('main_page'))
+            return redirect(url_for('settings'))
     return render_template('settings.html', title='Настройки', form=forms)
 
 

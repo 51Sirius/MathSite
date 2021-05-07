@@ -13,6 +13,11 @@
         <div class="quest">
             {{ example }}
         </div>
+        {% with messages = get_flashed_messages() %}
+            {% if messages %}
+                {{ messages[0] }}
+            {% endif %}
+        {% endwith %}
         <form action="{{ url_for('play_menu') }}" method="post" novalidate class="answer">
             {{ form.csrf_token }}
             <div class="block-answer">{{ form.answer(class_="answer-form") }}</div>

@@ -3,6 +3,7 @@ import random as rand
 
 class Example:
     def __init__(self, result=None, answer=None, vibor=None):
+        self.solve = 'Решите уравнение'
         self.result = result
         self.answer = answer
         self.str_example = None
