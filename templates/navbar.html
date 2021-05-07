@@ -1,4 +1,5 @@
 <a class="logo" href="{{ url_for('main_page') }}">MathTR</a>
+<a href="{{ url_for('rating') }}" class="button small">Рейтинг</a>
 {% if current_user.is_anonymous %}
     <div class="button-group">
         <a href="{{ url_for('login') }}" class="button small">Login</a>
