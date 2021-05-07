@@ -43,3 +43,31 @@ p {
 button {
     background: none;
 }
+
+@media screen and (max-width: 890px) {
+    .block-form {
+        flex-direction: column;
+    }
+}
+
+@media screen and (max-width: 700px) {
+    .page-registration {
+        min-height: 80vh;
+        width: 100%;
+    }
+
+    .submit-button {
+        min-width: 40vw;
+    }
+
+}
+
+@media screen and (max-width: 530px) {
+    .block-form {
+
+    }
+
+    .answer-form {
+        font-size: 6vw;
+    }
+}
