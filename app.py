@@ -139,7 +139,6 @@ def settings():
             flash('Человекс с таким именем уже есть')
         else:
             if nick != '':
-
                 current_user.username = nick
                 db.session.commit()
         level = forms.level.data
@@ -163,6 +162,12 @@ def settings():
 def logout():
     logout_user()
     return redirect(url_for('main_page'))
+
+
+@app.route('/rating')
+def rating():
+    users = Users.query.order_by(Users.score.desc()).all()[0:10]
+    return render_template('rating.html', title='Рэйтинг', users=users)
 
 
 if __name__ == '__main__':
