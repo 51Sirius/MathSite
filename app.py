@@ -34,12 +34,19 @@ def main_page():
 
 @app.route('/play', methods=['GET', 'POST'])
 def play_menu():
+    score = 1
     forms = Answer()
     example = gen.Example(vibor=[current_user.class_user, current_user.level])
     if forms.validate_on_submit():
         answer = forms.answer.data
         if answer == current_user.last_answer:
-            current_user.score += 1
+            if int(current_user.level) == 1:
+                score = 1
+            elif int(current_user.level) == 2:
+                score = 2
+            elif int(current_user.level) == 3:
+                score = 3
+            current_user.score += score
             db.session.commit()
             return redirect(url_for('play_menu'))
         else:

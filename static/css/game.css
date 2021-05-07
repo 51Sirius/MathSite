@@ -40,9 +40,11 @@ main {
 }
 
 .answer {
-    margin-top: 20px;
     display: flex;
     flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
 }
 
 .answer-form {
@@ -52,8 +54,13 @@ main {
     border: #F64C72 6px solid;
     background: none;
     width: 100%;
+    max-width: 40vw;
 }
 
 .block-answer {
     width: auto;
+}
+
+.button {
+    max-width: 30vw;
 }
