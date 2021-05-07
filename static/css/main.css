@@ -37,3 +37,12 @@ main {
     border-radius: 12vh;
     color: white;
 }
+
+@media screen and (max-width: 900px) {
+    .button-play {
+    margin: 0;
+    padding: 10vw 10vh 10vw 10vh;
+    font-size: xx-large;
+}
+}
+

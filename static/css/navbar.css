@@ -1,4 +1,5 @@
 header {
+    font-size: xx-large;
     align-items: center;
     justify-content: space-between;
     flex-grow: 0;
@@ -37,4 +38,13 @@ header {
     font-size: xxx-large;
     color: #F64C72;
     text-decoration: none;
+}
+
+@media screen and (max-width: 510px) {
+    header {
+        flex-direction: column;
+    }
+    .nickname {
+        margin-top: 20px;
+    }
 }
