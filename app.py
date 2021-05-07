@@ -39,7 +39,7 @@ def play_menu():
     if forms.validate_on_submit():
         answer = forms.answer.data
         if answer == current_user.last_answer:
-            current_user.user.score += 1
+            current_user.score += 1
             db.session.commit()
             return redirect(url_for('play_menu'))
         else:
@@ -131,21 +131,24 @@ def settings():
         if existing_user:
             flash('Человекс с таким именем уже есть')
         else:
-            current_user.username = nick
+            if nick != '':
+
+                current_user.username = nick
+                db.session.commit()
         level = forms.level.data
         class_user = forms.clas.data
         if class_user != '':
-            if 5 <= class_user <= 6:
+            if 5 <= int(class_user) <= 6:
                 current_user.class_user = class_user
             else:
                 flash('Доступны только 5е и 6е классы')
         if level != '':
-            if 1 <= level <= 3:
+            if 1 <= int(level) <= 3:
                 current_user.level = level
             else:
                 flash('Доступны только 1-3 уровни')
             db.session.commit()
-            return redirect(url_for('settings'))
+        return redirect(url_for('settings'))
     return render_template('settings.html', title='Настройки', form=forms)
 
 
