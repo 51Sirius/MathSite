@@ -24,3 +24,27 @@ p {
     text-align: center;
     margin-top: 10px;
 }
+
+@media screen and (max-width: 420px) {
+    .page-registration {
+        width: 100%;
+        min-height: 60vh;
+        padding: 4vw 4vh 4vw 4vh;
+    }
+}
+
+@media screen and (max-width: 280px) {
+    h1 {
+        font-size: x-large;
+    }
+    input {
+        font-size: x-small;
+    }
+}
+
+@media screen and (max-width: 250px) {
+    .page-registration {
+        width: 100%;
+        min-height: 60vh;
+        padding: 1vw 1vh 1vw 1vh;
+}}

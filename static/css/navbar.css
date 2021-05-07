@@ -40,7 +40,23 @@ header {
     text-decoration: none;
 }
 
-@media screen and (max-width: 510px) {
+@media screen and (max-width: 850px) {
+    .button {
+        margin-top: 10px;
+    }
+    .button-group {
+        flex-direction: column;
+    }
+}
+
+@media screen and (max-width: 670px) {
+    .button-group {
+        font-size: large;
+    }
+}
+
+
+@media screen and (max-width: 570px) {
     header {
         flex-direction: column;
     }
@@ -48,6 +64,8 @@ header {
     .nickname {
         margin-top: 20px;
     }
+
+
 }
 
 @media screen and (max-width: 230px) {
