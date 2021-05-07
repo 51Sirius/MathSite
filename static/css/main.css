@@ -40,9 +40,15 @@ main {
 
 @media screen and (max-width: 900px) {
     .button-play {
-    margin: 0;
-    padding: 10vw 10vh 10vw 10vh;
-    font-size: xx-large;
+        margin: 0;
+        padding: 10vw 10vh 10vw 10vh;
+        font-size: xx-large;
+    }
 }
+
+@media screen and (max-width: 350px) {
+        .button-play {
+        padding: 10vw 10vw 10vw 10vw;
+    }
 }
 

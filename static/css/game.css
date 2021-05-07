@@ -33,7 +33,7 @@ main {
     margin-right:  10px;
 }
 
-.button {
+.play-button {
     margin: 20px 0 0 0;
     width: 100%;
     background: none;
@@ -61,6 +61,26 @@ main {
     width: auto;
 }
 
-.button {
+.play-button {
     max-width: 30vw;
+}
+
+@media screen and (max-width: 1000px) {
+    .quest {
+        font-size: xxx-large;
+    }
+}
+
+@media screen and (max-width: 370px) {
+    .stat-bar{
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    .quest {
+        font-size: xx-large;
+    }
+    .play-button {
+        max-width: 50vw;
+    }
 }

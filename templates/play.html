@@ -21,7 +21,7 @@
         <form action="{{ url_for('play_menu') }}" method="post" novalidate class="answer">
             {{ form.csrf_token }}
             <div class="block-answer">{{ form.answer(class_="answer-form") }}</div>
-            <button type="submit" class="button">Ответить</button>
+            <button type="submit" class="button play-button">Ответить</button>
         </form>
     </div>
 {% endblock %}

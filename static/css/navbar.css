@@ -17,7 +17,7 @@ header {
     font-size: xxx-large;
 }
 
-.button-group{
+.button-group {
     width: auto;
     align-items: center;
     justify-content: center;
@@ -44,7 +44,14 @@ header {
     header {
         flex-direction: column;
     }
+
     .nickname {
         margin-top: 20px;
+    }
+}
+
+@media screen and (max-width: 230px) {
+    .logo {
+        padding: 3vw;
     }
 }
