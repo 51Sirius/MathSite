@@ -51,3 +51,42 @@ main {
 .main-page ul > li {
     font-size: x-large;
 }
+
+@media screen and (max-width: 850px) {
+    .page-registration {
+        width: 80vw;
+    }
+}
+
+@media screen and (max-width: 525px) {
+    .header-page {
+        margin: 0;
+        width: auto;
+    }
+
+    .page-registration {
+        width: 100vw;
+    }
+
+    main {
+        align-items: initial;
+    }
+
+    .main-page {
+        width: auto;
+    }
+}
+
+@media screen and (max-width: 420px) {
+    .header-page {
+        flex-direction: column;
+    }
+
+    .rank_img > img {
+        max-height: 10vh;
+    }
+
+    .footer-page {
+        width: auto;
+    }
+}
