@@ -47,3 +47,19 @@ main {
     font-size: 3vh;
     text-align: center;
 }
+
+@media screen and (max-width: 640px) {
+    .user-name {
+        font-size: 3vh;
+    }
+    .user-score {
+        font-size: 2vh;
+    }
+}
+
+@media screen and (max-width: 460px) {
+    .page-rating {
+        padding: 10vh 10vw 10vh 10vw;
+        width: 100%;
+    }
+}
