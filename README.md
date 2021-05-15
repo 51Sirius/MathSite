@@ -9,5 +9,5 @@ This is web wersion my programm taining [MathT](https://github.com/51Sirius/math
 - [x] Rating with users.
 - [x] Profile for user. 
 
-#Future functions
+# Future functions
 - [ ] Dowland game
