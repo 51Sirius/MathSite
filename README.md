@@ -10,4 +10,4 @@ This is web wersion my programm taining [MathT](https://github.com/51Sirius/math
 - [x] Profile for user. 
 
 #Future functions
-- [] Dowland game
+- [ ] Dowland game
