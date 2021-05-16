@@ -1,5 +1,4 @@
 from flask import Flask, render_template, request, redirect, url_for, abort, flash
-from flask_migrate import Migrate
 from flask_wtf import form
 from flask_login import LoginManager, login_user, logout_user, current_user, login_required
 import datetime
@@ -7,18 +6,17 @@ import locale
 from os import environ
 from forms import LoginForm, Registration, Answer, Settings
 from flask_sqlalchemy import SQLAlchemy
-from flask_migrate import Migrate
 from models import Users, db
 from flask_login import LoginManager, login_user, logout_user, current_user, login_required
 import generate_quest as gen
+import cfg
 
 app = Flask(__name__)
 locale.setlocale(locale.LC_ALL, '')
-app.config['SECRET_KEY'] = 'you-will-never-guess'
+app.config['SECRET_KEY'] = cfg.S_KEY
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///db.sqlite'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db.init_app(app)
-migrate = Migrate(app, db)
 login = LoginManager(app)
 
 
@@ -43,9 +41,9 @@ def play_menu():
             if int(current_user.level) == 1:
                 score = 1
             elif int(current_user.level) == 2:
-                score = 2
-            elif int(current_user.level) == 3:
                 score = 3
+            elif int(current_user.level) == 3:
+                score = 5
             current_user.score += score
             db.session.commit()
             return redirect(url_for('play_menu'))
@@ -96,31 +94,31 @@ def registration():
 @app.route('/user/<string:nick>')
 def user(nick):
     user = Users.query.filter_by(username=nick).first()
-    if 0 <= user.score < 500:
+    if 0 <= user.score < 100:
         rank = 'iron.png'
         rank_name = 'Железо'
-    elif 500 <= user.score < 1000:
+    elif 100 <= user.score < 300:
         rank = 'bronze.png'
         rank_name = 'Бронза'
-    elif 1000 <= user.score < 2000:
+    elif 300 <= user.score < 500:
         rank = 'silver.png'
         rank_name = 'Серебро'
-    elif 2000 <= user.score < 3000:
+    elif 500 <= user.score < 1000:
         rank = 'gold.png'
         rank_name = 'Золото'
-    elif 3000 <= user.score < 5000:
+    elif 1000 <= user.score < 2000:
         rank = 'platium.png'
         rank_name = 'Платина'
-    elif 5000 <= user.score < 10000:
+    elif 2000 <= user.score < 3000:
         rank = 'diamond.png'
         rank_name = 'Алмаз'
-    elif 10000 <= user.score < 20000:
+    elif 3000 <= user.score < 5000:
         rank = 'master.png'
         rank_name = 'Мастер'
-    elif 20000 <= user.score < 100000:
+    elif 5000 <= user.score < 10000:
         rank = 'gr_master.png'
         rank_name = 'Гранд-мастер'
-    elif user.score >= 100000:
+    elif user.score >= 10000:
         rank = 'legend.png'
         rank_name = 'Легенда'
     else:
