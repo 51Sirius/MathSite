@@ -39,6 +39,9 @@ main {
 }
 
 @media screen and (max-width: 900px) {
+    body {
+        overflow-y: auto;
+    }
     .button-play {
         margin: 0;
         padding: 10vw 10vh 10vw 10vh;
