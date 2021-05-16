@@ -44,6 +44,7 @@ header {
     .button {
         margin-top: 10px;
     }
+
     .button-group {
         flex-direction: column;
     }
@@ -72,4 +73,38 @@ header {
     .logo {
         padding: 3vw;
     }
+}
+
+.submenu {
+    width: 100%;
+    position: absolute;
+    z-index: 10;
+    -webkit-transition: 0.5s ease-in-out;
+    -moz-transition: 0.5s ease-in-out;
+    -o-transition: 0.5s ease-in-out;
+    transition: 0.5s ease-in-out;
+    visibility: hidden;
+    opacity: 0;
+}
+
+.block-nick:hover .submenu {
+    visibility: visible;
+    opacity: 1;
+}
+
+.block-list {
+    background: #1e1f75;
+    color: #F64C72;
+    display: block;
+    padding: 10px 15px;
+    text-decoration: none;
+    outline: none;
+    font-family: 'Lora', serif;
+    transition: .5s linear;
+}
+
+ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
 }
