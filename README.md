@@ -8,6 +8,6 @@ This is web wersion my programm taining [MathT](https://github.com/51Sirius/math
 - [x] Rank for user;
 - [x] Rating with users.
 - [x] Profile for user. 
+- [x] Dowland game
 
 # Future functions
-- [ ] Dowland game
